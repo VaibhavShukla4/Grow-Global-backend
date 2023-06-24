@@ -38,8 +38,8 @@ exports.postUpdate = async (req, res) => {
 // Get all post
 exports.getPost = async (req, res) => {
   try {
-    const messages = await PostModel.find();
-    res.status(200).json({ messages });
+    const posts = await PostModel.find();
+    res.status(200).json({ posts });
   } catch (error) {
     res
       .status(500)
@@ -50,8 +50,8 @@ exports.getPost = async (req, res) => {
 // Get all post
 exports.postDelete = async (req, res) => {
   try {
-    const response = await PostModel.find();
-    res.status(200).json({ response });
+    const Delete = await PostModel.find();
+    res.status(200).json({ Delete });
   } catch (error) {
     res
       .status(500)
