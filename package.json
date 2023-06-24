@@ -7,7 +7,6 @@
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "vaibhav",
   "license": "ISC",
   "dependencies": {
@@ -16,7 +15,8 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.3.1",
+    "mongodb": "^5.6.0",
+    "mongoose": "^7.2.2",
     "nodemon": "^2.0.22"
   }
 }
