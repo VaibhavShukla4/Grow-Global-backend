@@ -38,13 +38,12 @@ exports.postUpdate = async (req, res) => {
 // Get all post
 exports.getPost = async (req, res) => {
   try {
-    const { id } = req.params;
-
-    await PostModel.findByIdAndDelete(id);
-
-    res.json({ message: "Post deleted successfully" });
-  } catch (err) {
-    res.status(500).json({ error: "An error occurred" });
+    const messages = await PostModel.find();
+    res.status(200).json({ messages });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "An error occurred while retrieving the post" });
   }
 };
 
