@@ -47,17 +47,21 @@ exports.getPost = async (req, res) => {
   }
 };
 
-// Get all post
+// Get delete post
 exports.postDelete = async (req, res) => {
   try {
-    const Delete = await PostModel.find();
-    res.status(200).json({ Delete });
+    const { id } = req.params;
+
+    await PostModel.findByIdAndDelete(id);
+
+    res.status(200).json({ message: "Post deleted successfully" });
   } catch (error) {
     res
       .status(500)
-      .json({ error: "An error occurred while retrieving the response" });
+      .json({ error: "An error occurred while deleting the post" });
   }
 };
+
 exports.registerUser = async (req, res) => {
   try {
     const { email, password } = req.body;
